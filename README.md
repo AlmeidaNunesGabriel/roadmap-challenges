@@ -12,7 +12,7 @@ Os projetos estão organizados por domínio por área(inicialmente só Frontend)
 
 | Projeto | Domínio | Tecnologias | Estado | Links |
 | :--- | :--- | :--- | :--- | :--- |
-| **Single Page CV** | Frontend | HTML/CSS | [🚀 Ver Online](https://almeidanunesgabriel.github.io/roadmap-challenges/frontend/cv_project/) | |
+| **Single Page CV** | Frontend | HTML/CSS |PRONTO |  [🚀 Ver Online](https://almeidanunesgabriel.github.io/roadmap-challenges/frontend/cv_project/) | |
 | **Basic HTML Website** | Frontend | HTML | Em andamento | 
 
 ---
