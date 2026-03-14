@@ -37,7 +37,7 @@ main{
 
 .coluna{
     flex:1;
-    min-width: 300px;
+    min-width: 100%;
     border: 1px solid #ccc;
     padding: 15px;
 }
@@ -53,7 +53,7 @@ main{
     flex-basis: 100%;
     background-color:beige;
     text-align: center;
-    padding: 40px;
+    padding: 20 10px;
     
 }
 
