@@ -159,12 +159,11 @@ main{
 
     .reviews-container {
         display: flex;
-        flex-wrap: nowrap;       /* IMPEDE que os cartões pulem para baixo */
-        overflow-x: auto;        /* Ativa o scroll lateral quando o conteúdo transborda */
-        scroll-snap-type: x mandatory; /* Faz o "imã" para o cartão parar no meio */
+        flex-wrap: nowrap;    /* Mantém tudo em uma linha */
+        overflow-x: auto;     /* Ativa o deslize lateral */
         gap: 15px;
         padding: 20px;
-        -webkit-overflow-scrolling: touch; /* Deixa o deslizar suave no iPhone */
+        scroll-snap-type: x mandatory; /* Faz o "ímã" nos cards *//
     }
 
     .review-card {
@@ -175,9 +174,5 @@ main{
 
     .reviews-container::-webkit-scrollbar {
     display: none; /* Esconde a barra de rolagem visualmente */
-}
-    .reviews-container {
-    -ms-overflow-style: none;  /* IE e Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 }
