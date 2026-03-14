@@ -31,7 +31,7 @@ main{
 .container{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 0px;
     padding: 0 0px 20px 0px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.1) ;
     position: relative;
@@ -59,7 +59,52 @@ main{
     margin: 0; /* Garante que não empurre nada para os lados */
 }
     
+.reviews-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Espalha os cartões igualmente */
+    gap: 20px; /* Espaço entre os cartões */
+    flex-wrap: wrap; /* Permite quebrar linha se não houver espaço */
+    padding: 20px 0;
+    width: 100%;
+}
 
+.review-card {
+    flex: 1; /* Tamanho de 1/3 da largura */
+    min-width: 0px; /* Tamanho mínimo para não ficar muito espremido */
+    background-color: white; /* Cor de fundo para o cartão */
+    border: 1px solid #000; 
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza o texto e o autor verticalmente */
+    justify-content: space-between; /* Empurra o autor para o final do cartão */
+}
+
+
+.review-text {
+    font-family: Arial, sans-serif; /* Fonte simples para o texto */
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333; /* Cor quase preta */
+    margin-bottom: 20px; /* Espaço para o autor */
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column; /* Nome em cima, título embaixo */
+    color: #888; /* Cor cinza para o autor */
+    font-family: Arial, sans-serif;
+}
+
+.author-name {
+    font-weight: bold; 
+    font-size: 0.9rem;
+}
+
+.author-title {
+    font-size: 0.85rem;
+}
 
 /* Ajustes para dispositivos móveis (Celulares) */
 @media (max-width: 600px) {
@@ -83,7 +128,7 @@ main{
 
     .container {
         padding: 10px;
-        gap: 15px;
+        gap: 0px;
     }
 
     .coluna {
@@ -105,10 +150,34 @@ main{
     }
     .camada-interna {
         width: 100%;
-        padding: 0 0px; /* Reduz o padding lateral no celular */
+        padding: 0 px; /* Reduz o padding lateral no celular */
     }
     
     body {
         overflow-x: hidden; 
     }
+
+    .reviews-container {
+        display: flex;
+        flex-wrap: nowrap;       /* IMPEDE que os cartões pulem para baixo */
+        overflow-x: auto;        /* Ativa o scroll lateral quando o conteúdo transborda */
+        scroll-snap-type: x mandatory; /* Faz o "imã" para o cartão parar no meio */
+        gap: 15px;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch; /* Deixa o deslizar suave no iPhone */
+    }
+
+    .review-card {
+        flex: 0 0 85%;           /* Cada cartão ocupa 85% da largura da tela */
+        scroll-snap-align: center; /* Alinha o cartão ao centro ao deslizar */
+        min-width: 0;            /* Permite que o flex funcione corretamente */
+    }
+
+    .reviews-container::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem visualmente */
+}
+    .reviews-container {
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 }
