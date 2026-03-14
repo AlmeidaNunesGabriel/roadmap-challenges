@@ -1,0 +1,26 @@
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+}
+header {
+    background-color: aliceblue;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1) ;
+    position: relative;
+    z-index:1000;
+}
+h1 {
+    font-weight:bold;
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+}
+       
+hr {
+    border: 0;
+    border-top:1px solid #ccc;
+}
+
+main{
+    padding:  20px;
+}
