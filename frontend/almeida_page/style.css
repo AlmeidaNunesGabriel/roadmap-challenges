@@ -33,11 +33,14 @@ main{
     flex-wrap: wrap;
     gap: 20px;
     padding: 0 0px 20px 0px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1) ;
+    position: relative;
+    z-index:1000;
 }
 
 .coluna{
     flex:1;
-    min-width: 100%;
+    min-width: 300px;
     border: 1px solid #ccc;
     padding: 15px;
 }
@@ -50,25 +53,62 @@ main{
 
 #hero {
     width: 100%;
-    flex-basis: 100%;
-    background-color:beige;
+    background-color: beige;
     text-align: center;
-    padding: 20 10px;
-    
+    padding: 40px 10px;
+    margin: 0; /* Garante que não empurre nada para os lados */
 }
-
-@media (max-width: 600px){
-    header table {
-        display: block; 
-    }
     
+
+
+/* Ajustes para dispositivos móveis (Celulares) */
+@media (max-width: 600px) {
+    header table, 
+    header tr, 
     header td {
-        display: block; 
-        text-align: center !important;
+        display: block;
         width: 100%;
+        text-align: center !important;
+        padding: 5px 0;
+    }
+
+    header td:right {
+        text-align: center;
     }
 
     h1 {
-        font-size: 24px; 
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .coluna {
+        flex: 1 1 100%; 
+        min-width: 0;  
+    }
+
+   
+    #hero {
+        padding: 30px 15px;
+        box-sizing: border-box;
+    }
+
+    main > table, 
+    main > table tr, 
+    main > table td {
+        display: block;
+        width: 100%;
+    }
+    .camada-interna {
+        width: 100%;
+        padding: 0 0px; /* Reduz o padding lateral no celular */
+    }
+    
+    body {
+        overflow-x: hidden; 
     }
 }
